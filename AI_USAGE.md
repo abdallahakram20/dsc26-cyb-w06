@@ -10,8 +10,9 @@ I used Muse, my AI assistant, to write the first draft of the three modules in c
 
 ## What AI got wrong
 
-<!-- At least one thing an AI tool got wrong that you changed, and how you noticed:
-     a test, the docs, running it. -->
+Muse first included .pytest_cache files in the upload list, even though they are test artefacts and should never be committed. I noticed this while reviewing the file list before pushing, removed them, and the final upload had only the 13 starter and implementation files.
+
+Muse also first read the portal text for build_messages as if the escape was unclear. The starter docstring showed the exact form, and I checked that form against the public test, which expects the body to contain no < or > and to parse back to the same alert.
 
 ## In my own words
 
